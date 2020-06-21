@@ -11,6 +11,7 @@
     <modules>
         <module>first-level</module>
         <module>view</module>
+        <module>second-level</module>
     </modules>
 
 </project>
