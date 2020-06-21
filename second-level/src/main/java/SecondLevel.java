@@ -14,6 +14,9 @@ public class SecondLevel implements GeneralsMethod {
         if (str.isBlank()) {
             return "It is correct string";
         }
+        if (!str.contains("(") | !str.contains("{") | !str.contains("[")) {
+            return "This string - " + str + " - incorrect!";
+        }
 
         String[] listOfSymbolsInString = str.split("");
         Stack<String> stackOfOpenSymbols = new Stack<>();
@@ -48,6 +51,6 @@ public class SecondLevel implements GeneralsMethod {
         if (root == null) return 0;
         int Left = maxDepth(root.left);
         int Right = maxDepth(root.right);
-        return Math.max(Left,Right) + 1;
+        return Math.max(Left, Right) + 1;
     }
 }

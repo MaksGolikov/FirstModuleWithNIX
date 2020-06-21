@@ -10,6 +10,7 @@ public class SecondLevelTest {
         assertEquals("It is correct string", new SecondLevel().stringLogic("(([]{}))"));
         assertEquals("It is correct string", new SecondLevel().stringLogic(""));
         assertEquals("This string - ()] - incorrect!", new SecondLevel().stringLogic("()]"));
+        assertEquals("This string - jk vljsdv - incorrect!", new SecondLevel().stringLogic("jk vljsdv"));
     }
 
     @Test
