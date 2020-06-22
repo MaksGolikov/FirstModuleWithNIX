@@ -1,3 +1,5 @@
+import data.TreeNode;
+import service.impl.SecondLevel;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,7 +17,7 @@ public class Main {
                         new TreeNode(31, new TreeNode(28), null),
                         new TreeNode(40, new TreeNode(38), new TreeNode(52))));
         System.out.println("---Level 2---");
-        System.out.println("1 task: " + s2.stringLogic("i  s(){{()}[]}"));
-        System.out.println("2 task: "+s2.depthOfBinaryTree(root));
+        System.out.println("1 task: " + s2.stringLogic("jk( vljsdv"));
+        System.out.println("2 task: " + s2.depthOfBinaryTree(root));
     }
 }

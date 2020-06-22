@@ -1,7 +1,14 @@
+package service.impl;
+
+import data.TreeNode;
+import service.GeneralsMethod;
+
 import java.util.*;
 
-public class SecondLevel implements GeneralsMethod {
+import static util.StringUtil.isNotValidString;
+import static util.StringUtil.maxDepth;
 
+public class SecondLevel implements GeneralsMethod {
 
     private final Map<String, String> map = new HashMap<>() {{
         put("(", ")");
@@ -9,13 +16,15 @@ public class SecondLevel implements GeneralsMethod {
         put("[", "]");
     }};
 
-
     public String stringLogic(String str) {
         if (str.isBlank()) {
             return "It is correct string";
         }
-        if (!str.contains("(") | !str.contains("{") | !str.contains("[")) {
-            return "This string - " + str + " - incorrect!";
+
+        for (Map.Entry<String, String> me : map.entrySet()) {
+            if (isNotValidString(str, me.getKey(), me.getValue())) {
+                return "This string - " + str + " - incorrect!";
+            }
         }
 
         String[] listOfSymbolsInString = str.split("");
@@ -47,10 +56,4 @@ public class SecondLevel implements GeneralsMethod {
         return maxDepth(root);
     }
 
-    private static int maxDepth(TreeNode root) {
-        if (root == null) return 0;
-        int Left = maxDepth(root.left);
-        int Right = maxDepth(root.right);
-        return Math.max(Left, Right) + 1;
-    }
 }

@@ -1,5 +1,7 @@
 
+import data.TreeNode;
 import org.junit.jupiter.api.Test;
+import service.impl.SecondLevel;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -8,9 +10,9 @@ public class SecondLevelTest {
     @Test
     public void stringLogic() {
         assertEquals("It is correct string", new SecondLevel().stringLogic("(([]{}))"));
-        assertEquals("It is correct string", new SecondLevel().stringLogic(""));
+        assertEquals("It is correct string", new SecondLevel().stringLogic("jk()vljsdv"));
         assertEquals("This string - ()] - incorrect!", new SecondLevel().stringLogic("()]"));
-        assertEquals("This string - jk vljsdv - incorrect!", new SecondLevel().stringLogic("jk vljsdv"));
+        assertEquals("It is correct string", new SecondLevel().stringLogic("jk() vljsdv"));
     }
 
     @Test
